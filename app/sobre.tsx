@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function Sobre(){
     const router = useRouter();
@@ -7,9 +7,10 @@ export default function Sobre(){
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Sobre o App</Text>
-            <Text style={styles.description}>Este é o meu primeiro aplicativo mobile desenvolvido com React Native. O projeto foi criado com o objetivo de aplicar na prática os conhecimentos adquiridos em desenvolvimento mobile, explorando conceitos como componentes, navegação, estados e estilização. 
-O app foi pensado para oferecer uma experiência simples, intuitiva e funcional, focando na organização do código e em uma interface agradável para o usuário. Durante o desenvolvimento, foram utilizados recursos modernos do ecossistema React, permitindo a criação de uma aplicação multiplataforma (Android e iOS) com um único código.</Text>
+            <Text style={styles.description}>        Este é o meu primeiro aplicativo mobile desenvolvido com React Native. O projeto foi criado com o objetivo de aplicar na prática os conhecimentos adquiridos em desenvolvimento mobile, explorando conceitos como componentes, navegação, estados e estilização. </Text>
+            <Text style={styles.description}>        O app foi pensado para oferecer uma experiência simples, intuitiva e funcional, focando na organização do código e em uma interface agradável para o usuário. Durante o desenvolvimento, foram utilizados recursos modernos do ecossistema React, permitindo a criação de uma aplicação multiplataforma (Android e iOS) com um único código.</Text>
             <TouchableOpacity style={styles.button}> <Text style={styles.buttonText} onPress={() => router.back()}>Voltar</Text></TouchableOpacity>
+            <Image style={styles.image} source={{uri: "https://static.wixstatic.com/media/6cd7ee_826553afe9a9424181d7e60ab6f6b34d~mv2.jpg/v1/fill/w_568,h_352,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/6cd7ee_826553afe9a9424181d7e60ab6f6b34d~mv2.jpg"}} />
         </View>
     );
 
@@ -47,14 +48,15 @@ const styles = StyleSheet.create({
         fontWeight: '600'
     },
     image: {
-        width: 120,
-        height: 120,
-        marginBottom: 20
+        width: 200,
+        height: 200,
+        marginBottom: 20,
+        marginTop: 10
     },
     description: {
         fontSize: 14,
         color: '#1d1d1dff',
-        fontWeight: '500',
+        fontWeight: '400',
         marginBottom: 20
     },
 
