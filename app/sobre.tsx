@@ -1,10 +1,16 @@
+import Footer from "@/components/Footer";
 import { useRouter } from "expo-router";
 import { Image, ScrollView, StyleSheet, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Button from "../components/Button";
 import Card from "../components/card";
+
 
 export default function Sobre(){
     const router = useRouter();
+        const handlePress = () => {
+        console.log('Botão Pressionado!');
+    }
 
     return (
         <SafeAreaView style={styles.safeArea}>
@@ -19,8 +25,14 @@ export default function Sobre(){
                     onPress={() => router.push('/')}
                 /> 
                 <Image style={styles.image} source={{uri: "https://static.wixstatic.com/media/6cd7ee_826553afe9a9424181d7e60ab6f6b34d~mv2.jpg/v1/fill/w_568,h_352,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/6cd7ee_826553afe9a9424181d7e60ab6f6b34d~mv2.jpg"}} />
-            </ScrollView>
+            <Button title="Salvar" onPress={handlePress} color = '#00c853ff'/>
+            <Button title="Editar" onPress={() => router.back()} color = '#fb2727ff'/>
+            <Button title="Cancelar" onPress={handlePress} color = '#fda01dff' />
+
+                </ScrollView>
+                <Footer />
         </SafeAreaView>
+        
     );
 }
 
@@ -34,7 +46,8 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         padding: 16,
-        backgroundColor: "#ffcffbff"
+        backgroundColor: "#ffcffbff",
+        gap: 4
     },
     title: {
         fontSize: 24,
