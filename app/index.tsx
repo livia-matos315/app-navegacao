@@ -1,5 +1,6 @@
 import { useRouter } from "expo-router";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import Card from "../components/card";
 
 export default function Home(){
     const router = useRouter();
@@ -7,8 +8,18 @@ export default function Home(){
         <View style={styles.container}>
             <Text style={styles.title}>Bem vindo ao React Native!</Text>
             <Text style={styles.subtitle}>Esta é a tela inicial do nosso app</Text>
-            <TouchableOpacity style={styles.button}> <Text style={styles.buttonText} onPress={() => router.push('/detalhes')}>Ir para detalhes</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.button}> <Text style={styles.buttonText} onPress={() => router.push('/sobre')}>Ir para sobre</Text></TouchableOpacity>
+            <Card 
+                title="Página de Detalhes"
+                description="Acesse esta página para ver mais informações detalhadas sobre o funcionamento do app."
+                buttonText="Ir para Detalhes"
+                onPress={() => router.push('/detalhes')}
+            />
+            <Card 
+                title="Sobre Nós"
+                description="Conheça mais sobre a nossa equipe e a história por trás da criação deste projeto."
+                buttonText="Ir para Sobre"
+                onPress={() => router.push('/sobre')}
+            />
         </View>
     );
 }
@@ -32,17 +43,5 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         color: '#555',
         marginBottom: 28
-    },
-    button: {
-        backgroundColor: "#75b8ffff",
-        paddingVertical: 8,
-        paddingHorizontal: 22,
-        borderRadius: 12,
-        marginBottom: 12
-    },
-    buttonText: {
-        color: '#333',
-        fontSize: 16,
-        fontWeight: '600'
-    },
+    }
 })
