@@ -43,11 +43,11 @@ const styles = StyleSheet.create({
     },
     scrollContainer: {
         flexGrow: 1, 
-        justifyContent: "center",
         alignItems: "center",
         padding: 16,
+        paddingBottom: 40,
         backgroundColor: "#ffcffbff",
-        gap: 4
+        gap: 6
     },
     title: {
         fontSize: 24,
